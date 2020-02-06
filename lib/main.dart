@@ -10,6 +10,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Track it',
+      theme: ThemeData(
+          primarySwatch: Colors.orange,
+          accentColor: Colors.amber[800],
+          fontFamily: 'Quciksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
+              ),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                    title: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                )),
+          )),
       home: MyHomePage(),
     );
   }
@@ -74,7 +92,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TrackIt App'),
+        title: Text(
+          'TrackIt App',
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -90,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               child: Card(
-                color: Colors.blue,
+                // color: Colors.blue,
                 child: Text('CHART!!!'),
                 elevation: 5,
               ),
