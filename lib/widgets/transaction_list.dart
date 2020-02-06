@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/transaction.dart';
 
-
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
 
@@ -24,7 +23,7 @@ class TransactionList extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColor,
                       width: 2,
                     ),
                   ),
@@ -33,8 +32,8 @@ class TransactionList extends StatelessWidget {
                     '\N${transactions[index].amount.toStringAsFixed(2)}',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20, 
-                      color: Colors.purple,
+                      fontSize: 20,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -43,13 +42,11 @@ class TransactionList extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       transactions[index].title,
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.purple,
-                          fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.title,
                     ),
                     Text(
-                      DateFormat('dd-MMM-yyy hh:mm a').format(transactions[index].date),
+                      DateFormat('dd-MMM-yyy hh:mm a')
+                          .format(transactions[index].date),
                       style: TextStyle(
                         fontSize: 10,
                         color: Colors.grey,
