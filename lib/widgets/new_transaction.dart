@@ -21,6 +21,8 @@ class _NewTransactionState extends State<NewTransaction> {
 
   DateTime _selectedDate;
 
+  _NewTransactionState();
+
   void _submitData() {
     if (_amountController.text.isEmpty) {
       return;
